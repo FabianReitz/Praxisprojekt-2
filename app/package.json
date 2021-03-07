@@ -1,0 +1,18 @@
+{
+  "name": "indexed_library",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "description": "This app will index the digital library of stadt.werk GmbH.",
+  "main": "app.js",
+  "author": "Fabian Reitz <reitz@stadtwerk.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabianReitz/Praxisprojekt-2/issues"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "nodemon": "^2.0.7"
+  }
+}
