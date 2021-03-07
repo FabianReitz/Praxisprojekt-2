@@ -1,4 +1,14 @@
-# Exclude certain files and folders from version control.
+# Exclude certain files and folders from version control
 
-# Exclude the settings of the Visual Studio Code IDE:
-/.vscode
+# Exclude the settings of the Visual Studio Code IDE
+.vscode
+
+###############
+# app directory 
+###############
+
+# Exclude node modules
+app/node_modules/*
+
+# Exclude package-lock.json
+app/package-lock.json
