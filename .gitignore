@@ -1,0 +1,4 @@
+# Exclude certain files and folders from version control.
+
+# Exclude the settings of the Visual Studio Code IDE:
+/.vscode
