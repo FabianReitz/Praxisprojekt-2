@@ -8,7 +8,7 @@
 ###############
 
 # Exclude node modules
-app/node_modules/*
+app/server/node_modules/*
 
 # Exclude package-lock.json
 app/package-lock.json
