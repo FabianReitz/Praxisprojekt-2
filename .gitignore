@@ -3,6 +3,9 @@
 # Exclude the settings of the Visual Studio Code IDE
 .vscode
 
+# Exclude the settings of the IntelliJ IDEA IDE
+.idea
+
 ###############
 # app directory 
 ###############
