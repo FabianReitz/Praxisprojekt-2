@@ -1,0 +1,21 @@
+# Ignore everything.
+*
+
+# Except the following directories.
+!/ebooks/
+!/ebooks/*
+!/ebooks/*/*
+!/specifications/
+!/specifications/*
+!/specifications/*/*
+
+# Except the following file types.
+!.gitattributes
+!.gitignore
+!*.md
+!*.pdf
+!*.epub
+!*.sublime-project
+
+# Ignore macOS files after all
+.DS_Store

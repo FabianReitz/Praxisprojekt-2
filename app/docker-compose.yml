@@ -1,0 +1,41 @@
+version: '3.6'
+services:
+  api:
+    image: fabian.reitz/indexed_library
+    container_name: nodeApp
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+     - NODE_ENV=local
+     - ES_HOST=elasticsearch
+     - NODE_PORT=3000
+     - ELASTIC_URL=http://elasticsearch:9200
+    volumes:
+      - .:/usr/src/app/books
+    command: node app.js
+    links:
+        - elasticsearch
+    depends_on:
+        - elasticsearch
+    networks: 
+      - indexed_library_dockernet
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.11.1
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    logging:
+      driver: none
+    ports:
+      - 9200:9200
+    networks: 
+      - indexed_library_dockernet
+volumes:
+  esdata:
+networks:
+    indexed_library_dockernet:

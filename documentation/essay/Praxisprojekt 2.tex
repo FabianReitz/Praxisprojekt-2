@@ -1,0 +1,388 @@
+% ==========================================================
+%
+% Dies ist die LaTeX-Datei für das zweite Praxisprojekt von:
+%
+%                		Fabian Reitz
+%
+%				       mit dem Titel:
+%
+%  					 "Praxisprojekt 2"
+%					
+%			 in Kooperation mit stadt.werk GmbH
+%
+% ==========================================================
+
+
+
+% ----------------------------
+%
+% Konfiguration des Dokumentes
+%
+% ----------------------------
+
+% Dokumenten-Klasse und Format auf A4 festlegen:
+\documentclass[a4paper]{scrartcl}
+
+% Einen Zähler für Paragraphen benutzen:
+\addtocounter{tocdepth}{1}
+
+% Einrückung bei Absatzbeginn verhindern:
+\setlength{\parindent}{0pt}
+
+
+
+% ------------------
+%
+% Benötigte Packages
+%
+% ------------------
+
+% Europäisches Buchstaben-Encoding verwenden:
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+
+% Deutsche Rechtschreibung nach aktueller Reform verwenden:
+\usepackage[ngerman]{babel}
+
+% Fontspec verwenden:
+\usepackage{fontspec}
+
+% Zeilenabstand verwenden:
+\usepackage{setspace}
+
+% Abschnitte im Dokument verlinken: 
+\usepackage{hyperref}
+\hypersetup{
+	pdfencoding=auto,
+	pdftitle={TITEL},
+	pdfsubject={THEMA},
+	pdfauthor={Fabian Reitz},
+	pdfkeywords={},
+   	hidelinks
+}
+
+% Befehle zum Festlegen der aktuellen Uhrzeit verwenden:
+\usepackage{scrtime}
+
+% Einbinden von Grafiken:
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{sidecap}
+
+% Setzen der Seitenabstände
+\usepackage[a4paper, left=4cm, right=4cm, top=3cm, bottom=1.5cm]{geometry}
+
+% Ein Abkürzungsverzeichnis benutzen:
+\usepackage{acronym}
+
+% Den Header des Dokumentes bearbeiten:
+\usepackage{fancyhdr}
+
+% Inhaltsverzeichnis und Abbildungsverzeichnis in 
+% das Inhaltsverzeichnis einbinden:
+\usepackage[notbib]{tocbibind}
+
+% Setzen von Punkten als Trenner in das Inhaltsverzeichnis:
+\usepackage[titles]{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\usepackage{tocloft}
+
+\setlength{\cftbeforesecskip}{3pt}
+
+
+
+
+
+
+
+% --------------------------------
+%
+% Einstellungen für die Schriftart
+%
+% --------------------------------
+
+% Schriftart auf "Times New Roman" festlegen:
+\setmainfont[
+	Path = ./fonts/,
+    BoldFont = Times-New-Roman-Bold.ttf,
+    ItalicFont = Times-New-Roman-Italic.ttf
+]{Times-New-Roman.ttf}
+
+% Header bearbeiten:
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{- \thepage\ -}
+\renewcommand{\headrulewidth}{0pt}
+
+\linespread{1.5}
+
+
+% ---------------------
+%
+% Anfang des Dokumentes
+%
+% ---------------------
+
+\begin{document}
+
+
+% ---------------------
+% Deckblatt definieren:
+% ---------------------
+
+
+
+\titlehead{\centering\includegraphics[scale=0.3]{assets/logo_DHSH}}
+\subject{Praxisprojekt 2 - Informatik \\}
+\title{Der Nutzen von digitalem Wissensmanagement in mittelständischen IT-Unternehmen \\ - am Beispiel einer digitalen Bibliothek}
+
+\author{\date{}}
+\vspace{2cm}
+\publishers{
+	\begin{tabbing}
+		Betreuender Dozent: tab \= Mitte \= Rechts \= \kill
+		
+		Abgegeben von: 	\> Fabian Reitz \\
+		E-Mail: 		\> fabian.reitz@stud.dhsh.de \\
+		Studiengruppe:	\> WINF 119 B \\ \\
+		Gutachter:		\> Herr Prof. Dr. Alexander Paar \\ \\
+		Abgabetermin:	\> 29.04.2021 \\
+		Versuch:		\> Erstversuch \\
+	\end{tabbing}
+}
+\maketitle
+
+\thispagestyle{empty}
+
+
+
+% -------------------
+% Inhaltsverzeichnis:
+% -------------------
+
+\newpage
+
+% Alle folgenden Seiten in römischen Zahlen zählen:
+\pagenumbering{Roman}
+
+% Beginn der Paginierung bei zwei:
+\setcounter{page}{2}
+
+% Inhaltsverzeichnis zeigen:
+\tableofcontents
+
+
+% ----------------------
+% Abkürzungsverzeichnis:
+% ----------------------
+
+% Neue Seite beginnen:
+\newpage
+
+\section*{Abkürzungsverzeichnis}
+
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+
+% Abkürzungsverzeichnis beginnen:
+\begin{tabbing}
+	----------------------- \= Erklärung \kill
+	GmbH \> Gemeinschaft mit beschränkter Haftung \\
+	HDD \> Hard Drive Disk \\
+	\> deutsch: Festplatte, magnetisches Speichermedium  \\
+	IT \> Informationstechnologie \\
+	KG \> Kommanditgesellschaft \\
+	KMU \> kleine und mittlere Unternehmen \\ 
+	LBV \> Landwirtschaftlicher Buchführungsverband \\
+	MIS \> Marketinginformationssystem \\
+	SE \> Societas Europaea, deutsch: Europäische Gesellschaft \\
+	SMART \> Spezifisch, Messbar, Attraktiv, Realistisch, Terminiert \\
+	SWOT \> Strengths, Weaknesses, Opportunities, Threats, \\
+	\> deutsch: Stärken, Schwächen, Chancen, Risiken \\	
+\end{tabbing}
+
+
+% ----------------------
+% Abbildungsverzeichnis:
+% ----------------------
+\newpage
+
+\listoffigures
+
+
+% --------------------
+% Tabellenverzeichnis:
+% --------------------
+\newpage
+
+\listoftables
+
+% -----------
+% Einleitung:
+% -----------
+
+% Neue Seite erstellen:
+\newpage
+
+% Paginierung mit eins beginnen:
+\setcounter{page}{1}
+
+% Alle folgenden Seiten in arabischen Zahlen zählen:
+\pagenumbering{arabic}
+
+% Neue Section: Einleitung
+\section{Einleitung}
+Das 21. Jahrhundert steht im Zeichen der digitalen Informationsexplosion. Während in dem Jahr 1984 3,65 Mio. Festplatten des Typs HDD verkauft wurden, wuchs diese Zahl im Jahr 2000 um mehr als 5.400 \% auf 200,1 Mio. verkaufte Einheiten an. Dieser Trend gipfelte im Jahr 2010 bei einer Menge von 651.32 Mio. Stück (Alsop 2020). Der Bedarf, Informationen zu sichern, wächst ununterbrochen. Auch Unternehmen haben ein Interesse daran, Informationen in Form von Wissen zu verwalten. Auf die Frage, wie wichtig die Bedeutung von Wissensmanagement für die deutsche Wirtschaft ist, stimmen 91 \% von 532 befragten Personen für sehr wichtig bis wichtig (Decker et al. 2005: 28). \\ \\
+In diesem Kontext muss die Frage beantwortet werden, wo der Unterschied zwischen Wissen und Informationen liegt. „Wissen bezeichnet die Gesamtheit der Kenntnisse und Fähigkeiten, die Individuen zur Lösung von Problemen einsetzen.“ (Probst et al. 2006: 22). Wissen baut auf Informationen und Daten auf, ist aber an Individuen gebunden. Informationen und Daten können auch ohne Zusammenhang mit Personen existieren. Um diese Definition auf den betrieblichen Kontext auszuweiten, wird der Begriff organisationale Wissensbasis eingeführt. Diese besteht aus Wissensbeständen von einzelnen Mitarbeitenden und kollektivem Wissen von Gruppen. Unternehmen können zur Lösung ihrer aufgaben auf die Wissensbasis zugreifen und somit theoretisch das gesamte Wissen der Individuen in einem Unternehmen nutzen (Probst et al. 2006: 22). \\ \\
+Im Rahmen dieser Arbeit wird ein besonderes Augenmerk auf die praktische Umsetzung einer digitalisierten organisationalen Wissensbasis gelegt. Ziel dieser Arbeit ist das Erstellen einer digitalen indexierten Bibliothek. Weiterhin werden die Vorteile durch eine Befragung von Probanden untersucht. \\
+Zu der Erstellung dieser organisationalen Wissensbasis werden moderne Web-, Datenbank- und Containertechnologien verwendet. Es wird darauf eingegangen, warum speziell diese Technologien verwendet werden und wo die Vorteile zu anderen Technologien liegen.
+
+\newpage
+
+\section{Theoretischer Hintergrund}
+Das besondere Augenmerk dieser Arbeit liegt auf dem Aspekt der Informatik, jedoch wird etwas betriebswirtschaftlicher Hintergrund benötigt, um die Relevanz für das Unternehmen zu verdeutlichen. Im Folgenden wird auf wichtige Aspekte beider Bereiche eingegangen, um Unklarheiten zu beseitigen und grundsätzliches Wissen für die spätere Umsetzung des Projektes zu vermitteln.
+
+\subsection{stadt.werk}
+Das Projekt der Schaffung einer digitalisierten organisationalen Wissensbasis wird an dem Unternehmen stadt.werk konzeption.text.gestaltung GmbH. Zur Reduzierung der Wortwahl und aus Gründen der Lesbarkeit wird das Unternehmen im Folgenden als stadt.werk abgekürzt. Das Unternehmen gehört per Definition der Gruppe der Dienstleistungsbetriebe an (Wöhe 2010: 31) und erstellt Software nach dem Prinzip software-as-a-service (Benlian und Hess 2011: 232). stadt.werk beschäftigt aktuell elf Mitarbeitende und zwei Geschäftsführer. Nach der Definition der Europäischen Kommission ist stadt.werk der Gruppe der KMU zuzuordnen. In dieser Kategorie ist das Unternehmen per Definition ein kleines Unternehmen, da es einen Jahresumsatz von 10 Mio. EUR und eine Obergrenze von 50 Beschäftigten nicht überschreitet (EU-Kommission 2003: 39). \\
+Das Unternehmen stadt.werk ist eine Tochtergesellschaft des Landwirtschaftlichen Buchführungsverbandes, welcher gleichzeitig der bedeutendste Kunde des Unternehmens ist. Die Spezialisierung stadt.werks liegt dabei in der Schaffung und Wartung von Intranetsystemen auf der Basis von Webtechnologien.
+
+\subsection{Wissensmanagement}
+
+\subsubsection{Bedeutung von Wissensmanagement}
+Der Wunsch, Wissen zu verwalten und zugänglich zu machen, ist nicht neu. Technologien mit einem Alter von mehr als 2000 Jahren zeigen, dass die Bewahrung und Weitergabe von Wissen schon lange eine wichtige Rolle im Leben der Menschen spielt (Moore 2000, zitiert nach Decker et al. 2005: 15). Der Drang danach, Wissen zu managen, in Kombination mit der eingangs erwähnten Informationsexplosion, stellt Unternehmen des 21. Jahrhunderts vor eine große Aufgabe. Es muss eine Möglichkeit gefunden werden, Wissen skalierbar, digital und möglichst schnell jederzeit zugänglich zu machen. \\
+Es lässt sich jedoch die Frage stellen, wozu Wissensmanagement gebraucht wird. Angenommen, eine beschäftigte Person besitzt viel Wissen über unternehmensinterne Abläufe. Behält sie dieses Wissen für sich und bringt es nicht in eine organisationale Wissensbasis ein, macht sich diese Person zwar unverzichtbar für das Unternehmen, jedoch macht dieses Verhalten ein Unternehmen langsam und unflexibel. Sollte dieser Person theoretisch etwas zustoßen, wäre ein bedeutender Teil des Wissens über das Unternehmen verloren. \\
+Führungskräfte haben ein besonderes Interesse daran, Wissensmanagement in dem Unternehmen umzusetzen. Das Sammeln und Verwalten von Wissen hilft Führungskräften, einen besseren, dezentralisierten Umgang mit dieser wichtigen Ressource zu gewährleisten (Probst et al. 2006: 22). Der rasante Fortschritt der Informationstechnologie in Zusammenhang mit dem Fortschritt in der Computertechnik ermöglichte seit den 1990er Jahren eine umfassende Wissensbewahrung und einen schnellen Zugriff auf Informationen aller Art (Decker et al. 2005: 14). „Für zahlreiche Unternehmen rückte das Management von Wissen in den Mittelpunkt der Betrachtung.“ (Decker et al. 2005: 14). \\ \\
+
+\subsubsection{Wissensmanagement im Kontext von Corona und Homeoffice}
+
+
+\subsection{Elasticsearch}
+
+\subsubsection{Indices, Types, Documents, Fields}
+    - Wie sind Elemente der Elasticsearch aufgebaut? [2-3 Seiten]
+    
+\subsubsection{Scoring}
+    - Boolean model, TF/IDF, vector space model [4-5 Seiten]
+    
+\subsection{Vergleich mit anderen Datenbanksystemen}
+    - Relationale Datenbanken vs Dokumentenorientierte Datenbanken [3-4 Seiten]
+    - Warum Elasticsearch für dieses oder andere Projekte? [2-3 Seiten]
+    
+\section{Umsetzung}
+
+\subsection{Idee}
+    - Beschreibung des Projektes [1-2 Seiten]
+
+\subsection{Wahl der Technologien}
+    - Node.js, npm, JavaScript, Docker, Kibana, Postman etc. [4-5 Seiten]
+
+\subsection{Schwierigkeiten}
+    - Schwierigkeiten, auf die ich während der Umsetzung gestoßen bin [1-2 Seiten]
+    
+\subsection{Ergebnis der Umsetzung}
+    - Vorstellung Code und gewählte Infrastruktur [4 Seiten]
+
+\subsection{Überprüfung der aufgestellten Theorie}
+    - Vorgehensweise Überprüfung mittels Fragebogen [2-3 Seiten]
+
+\section{Ergebnisse}
+    - Ergebnisse des Fragebogens aufzeigen [4-6 Seiten]
+
+\section{Fazit}
+    - Ergebnisse des Fragebogens analysieren und bewerten [2-3 Seiten]
+    - aufgestellte Theorie verifizieren oder falsifizieren [2-3 Seiten]
+
+\section{Methodik}
+    - gewählte Methodik begründen und kritisieren [2-3 Seiten]
+
+% ---------------------
+% Literaturverzeichnis:
+% ---------------------
+
+% Neue Seite beginnen:
+\newpage
+
+% Seitenzahl als römische Zahl angeben:
+\pagenumbering{Roman}
+
+% Beginn der Zählung bei 5:
+\setcounter{page}{6}
+
+% Literaturverzeichnis zu TOC hinzufügen:
+\addcontentsline{toc}{section}{Liteaturverzeichnis}
+
+% Literaturverzeichnis:
+\section*{Literaturverzeichnis}
+
+% Einfacher Zeilenabstand:
+\singlespacing
+
+Alsop, T. (2020): \textit{Global hard disk drive (HDD) shipments 1976-2025}, [online] \\ \href{https://www.statista.com/statistics/398951/global-shipment-figures-for-hard-disk-drives/}{https://www.statista.com/statistics/398951/global-shipment-figures-for-hard- \\ disk-drives/}, statista, (09.04.2021) \\ \\
+Benlian, A. und Hess, T. (2011): \textit{Opportunities and risks of software-as-a-service: Findings from a survey of IT executives}, Decision Support Systems, Nr. 52, S. 232 - 246 \\ \\
+Decker, B. und Finke, I. und John, M. und Joisten, M. und Schnalzer, K. und Voigt, S. und Wesoly, M. und Will, M. (2015): \textit{Wissen und Information 2005}, Fraunhofer IRB Verlag, Stuttgart \\ \\
+EU-Kommission (2013): \textit{EMPFEHLUNG DER KOMMISSION vom 6. Mai 2003 betreffend die Definition der Kleinstunternehmen sowie der kleinen und mittleren Unternehmen}, Bekannt gegeben unter Aktenzeichen K(2003) 1422, 2003/361/EG \\ \\
+Moore, K. (2000): \textit{The Ancient Art of Knowledge Management}, Knowledge Management Review, Nr. 12 (Jan/Feb 2000), S. 12 - 13 \\ \\
+Probst, G. und Raub, S. und Romhardt, K. (2006): \textit{Wissen managen - Wie Unternehmen ihre wertvollste Ressource optimal nutzen}, GWV Fachverlage GmbH, Wiesbaden \\ \\
+Wöhe, G. und Döring, U. (2010): \textit{Einführung in die Allgemeine Betriebswirtschaftslehre}, Verlag Franz Vahlen GmbH, München \\ \\
+
+
+% -------------
+% Sperrvermerk:
+% -------------
+
+% Neue Seite beginnen:
+\newpage
+
+% Neue Section:
+\section*{Sperrvermerk}
+
+\addcontentsline{toc}{section}{Sperrvermerk}
+
+% 1,5-facher Zeilenabstand:
+\onehalfspacing
+
+Dieses Praxisprojekt beinhaltet vertrauliche Informationen und Daten des Unternehmens stadt.werk konzeption.text.gestaltung GmbH. Dieses Praxisprojekt darf nur vom betreuenden Dozenten sowie berechtigten Mitgliedern des Prüfungsausschusses oder einem potenziellen Zweitgutachter eingesehen werden. Eine Vervielfältigung und Veröffentlichung ist auch auszugsweise nicht erlaubt. Dritten darf diese Arbeit nur mit der ausdrücklichen Genehmigung des Verfassers und des Unternehmens zugänglich gemacht werden.
+
+\vspace{8cm}
+% --------------------------
+% Eidesstattliche Erklärung:
+% --------------------------
+
+% Neue Section:
+\section*{Eidesstattliche Erklärung}
+
+\addcontentsline{toc}{section}{Eidesstattliche Erklärung}
+
+% 1,5-facher Zeilenabstand:
+\onehalfspacing
+
+Ich erkläre an Eides Statt, dass ich meine Hausarbeit „Praxisprojekt 1“ selbstständig und ohne fremde Hilfe angefertigt habe und dass ich alle von anderen Autoren wörtlich übernommenen Stellen wie auch die sich an Gedankengänge anderer Autoren eng anlehnenden Ausführungen meiner Arbeit besonders gekennzeichnet und die Quelle nach den mir von der Dualen Hochschule Schleswig-Holstein angegebenen Richtlinien zitiert habe. \\ \\
+
+Kiel, den 17.09.2020 \\ \\ 
+
+% Tabbing-Umgebung für Unterschriften:
+\begin{tabbing}
+	\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+	Fabian Reitz
+\end{tabbing}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
