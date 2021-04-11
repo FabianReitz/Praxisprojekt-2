@@ -1,3 +1,6 @@
 [submodule "library"]
 	path = library
 	url = https://github.com/stadtwerk/library
+[submodule "app/library"]
+	path = app/library
+	url = https://github.com/stadtwerk/library.git
