@@ -35,6 +35,16 @@ services:
       - 9200:9200
     networks: 
       - indexed_library_dockernet
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.11.2
+    container_name: kibana
+    ports:
+      - 5601:5601
+    environment:
+      ELASTIC_URL: http://elasticsearch:9200
+      ES_HOST: elasticsearch
+    networks: 
+      - indexed_library_dockernet
 volumes:
   esdata:
 networks:

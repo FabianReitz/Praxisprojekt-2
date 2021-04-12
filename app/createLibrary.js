@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const PDFParser = require('pdf-parse');
+const PDFParser = require('mighty-pdf-parser');
+const pageCounter = require('pdf-parse');
 const ebooks = './library/ebooks';
 const addBooks = require('./elasticsearch/addBooks');
 
@@ -32,17 +33,39 @@ async function findPDFFiles() {
 
                     const dataBuffer = fs.readFileSync(`${locationPath}/${file}`);
 
-                    // Parse the PDF into text.
-                    PDFParser(dataBuffer).then(function (data) {
+                    pageCounter(dataBuffer).then(async function(data) {
 
-                        // Add the text and the name of the PDF to elasticsearch.
-                        addBooks(
-                            file,
-                            data.text,
-                            );
+    
+                        for (i = 1; i <= data.numpages; i++) {
+                    
+                            let options = {
+                                pageRange: true,
+                                startPage: i,
+                                endPage: i
+                            };
+                    
+                            let pageCount = data.numpages;
+                            let pageContent;
+
+                            await PDFParser(dataBuffer, options).then(response => {
+                                
+                                pageContent = response.text;
+
+                                addBooks(
+                                    file,
+                                    pageCount,
+                                    i,
+                                    pageContent
+                                );
+
+                            });
+                        }
+                        
                     });
+                    
 
-                }
+
+                };
             };
         };
     }

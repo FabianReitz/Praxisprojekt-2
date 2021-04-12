@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "elasticsearch": "^16.7.2",
-    "pdf-parse": "^1.1.1"
+    "mighty-pdf-parser": "^1.0.0",
+    "pdf-parse": "^1.1.1",
+    "pdf2json": "^1.2.1"
   }
 }

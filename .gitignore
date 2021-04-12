@@ -6,6 +6,8 @@
 # Exclude the settings of the IntelliJ IDEA IDE
 .idea
 
+test
+
 ###############
 # app directory 
 ###############
