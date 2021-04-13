@@ -35,6 +35,7 @@ async function findPDFFiles() {
 
                     pageCounter(dataBuffer).then(async function(data) {
 
+                        let exportArray = [];
     
                         for (i = 1; i <= data.numpages; i++) {
                     
@@ -44,21 +45,23 @@ async function findPDFFiles() {
                                 endPage: i
                             };
                     
-                            let pageCount = data.numpages;
-                            let pageContent;
-
-                            await PDFParser(dataBuffer, options).then(response => {
+                            // let pageCount = data.numpages;
+                            let pageContent = await PDFParser(dataBuffer, options).then(response => {
                                 
-                                pageContent = response.text;
-
+                                return response.text;
+                                
+                            });
+                            
+                            exportArray.push(pageContent);
+                            
+                            if (exportArray.length == data.numpages) {
                                 addBooks(
                                     file,
-                                    pageCount,
-                                    i,
-                                    pageContent
+                                    exportArray
                                 );
+                                
+                            }
 
-                            });
                         }
                         
                     });

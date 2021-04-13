@@ -1,4 +1,5 @@
 const createLibrary = require('./createLibrary');
+const createIndex = require('./createIndex');
 const isAlive = require('./elasticsearch/isAlive');
 
 // Check if elasticsearch is up and running.
@@ -6,4 +7,6 @@ const isAlive = require('./elasticsearch/isAlive');
 isAlive();
 
 // Add all the e-books to the database.
-createLibrary();
+// createLibrary();
+
+createIndex();
