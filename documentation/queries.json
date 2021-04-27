@@ -1,0 +1,256 @@
+{
+    "query1": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "database"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "query2": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "relational"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "database"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "query3": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "database"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "relational"
+                        }
+                    }
+                ],
+                "must_not": [
+                    {
+                        "term": {
+                            "documentContent": "sql"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "query4": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "game"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "development"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "ios"
+                        }
+                    }
+                ],
+                "must_not": [
+                    {
+                        "term": {
+                            "documentContent": "android"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "query5": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "game"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "development"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "unity"
+                        }
+                    }
+                ],
+                "must_not": [
+                    {
+                        "term": {
+                            "documentContent": "unreal"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "ios"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "android"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "query6": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "html"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "css"
+                        }
+                    }
+                ],
+                "must_not": [
+                    {
+                        "term": {
+                            "documentContent": "javascript"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "query7": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "php"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "api"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "server"
+                        }
+                    }
+                ],
+                "must_not": [
+                    {
+                        "term": {
+                            "documentContent": "java"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "javascript"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "query8": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "git"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "python"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "query9": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "jquery"
+                        }
+                    }
+                ],
+                "must_not": [
+                    {
+                        "term": {
+                            "documentContent": "javascript"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "query10": {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "documentContent": "javascript"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "html"
+                        }
+                    },
+                    {
+                        "term": {
+                            "documentContent": "css"
+                        }
+                    }
+                ],
+                "must_not": [
+                    {
+                        "term": {
+                            "documentContent": "framework"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
