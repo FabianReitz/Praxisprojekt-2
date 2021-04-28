@@ -7,7 +7,7 @@ const addBook = require('./elasticsearch/addBook');
 
 /**
  * This function will look into the library subrepository and 
- * add all the PDF files in the 'ebooks' folder.
+ * add the contents of the pages of each book to the documents.
  */
 async function findPDFFiles() {
     

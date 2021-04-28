@@ -1,13 +1,13 @@
 const client = require('./newClient');
 
 /**
- * A function to create indices for elasticsearch and gives feedback about success or failure.
- * @param {String} title The title of the book.
- * @param {String} content The content of the book.
+ * A function to create indices for elasticsearch and gives 
+ * feedback about success or failure. It takes the title and
+ * the array of pages and updates the document accordingly.
  */
 function addBook (title, content) {
 
-    // Create the index for elasticsearch.
+    // Update the index of Elasticsearch.
     client.update({
         index: 'library',
         type: 'book',

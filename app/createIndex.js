@@ -4,8 +4,8 @@ const client = require('./elasticsearch/newClient');
 const ebooks = './library/ebooks';
 
 /**
- * This function will look into the library subrepository and 
- * add all the PDF files in the 'ebooks' folder.
+ * This function will create an index, look into the library 
+ * subrepository and index the names of all the books.
  */
 async function createIndex() {
     
@@ -30,6 +30,7 @@ async function createIndex() {
                 // Loop over every PDF
                 for (const file of library) {
 
+                    // Index the names of the books in individual documents.
                     client.index({
                         index: 'library',
                         id: file,

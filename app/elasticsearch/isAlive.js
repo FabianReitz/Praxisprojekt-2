@@ -1,5 +1,9 @@
 const client = require('./newClient');
 
+/**
+ * Check if Elasticsearch is up and running.
+ * Exit the Node.js process if it is not.
+ */
 async function isAlive () {
     client.ping({
         requestTimeout: 30000,
